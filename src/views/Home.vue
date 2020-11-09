@@ -1,18 +1,20 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="main_wrapper">
+      <h2>Emoji Picker</h2>
+      <EmojiPicker />
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import EmojiPicker from '@/components/EmojiPicker.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    EmojiPicker
   }
 }
 </script>
