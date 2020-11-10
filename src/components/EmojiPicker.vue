@@ -6,7 +6,7 @@
         <input type="text" name="" id="" placeholder="Search emojis" v-model="search_txt">
       </div>
       <button class="skin_tone_btn">
-        <div :class="[!skin_tone_btn_txt_visible ? skin_tone_icon : '', 'skin_tone_icon skin_tone_icon_wide']">🤚</div>
+        <div :class="[!skin_tone_btn_txt_visible ? 'skin_tone_icon skin_tone_icon_wide' : 'skin_tone_icon']">🤚</div>
         <div v-if="skin_tone_btn_txt_visible" class="skin_tone_btn_txt">Skin Tone</div>
       </button>
     </section>
