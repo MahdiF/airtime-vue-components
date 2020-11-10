@@ -223,7 +223,7 @@ a:hover {
     justify-content: center;
 }
 
-.skin_tone_icon_wide {
+.skin_tone_btn .skin_tone_icon_wide {
     width: calc(32em / 15);
 }
 
