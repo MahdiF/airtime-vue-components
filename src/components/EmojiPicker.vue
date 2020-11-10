@@ -3,11 +3,11 @@
     <section class="emoji_picker_header">
       <div class="emoji_search_box">
         <button><img src="@/assets/images/search_icon.svg" alt="" srcset=""></button>
-        <input type="text" name="" id="" placeholder="Search emojis">
+        <input type="text" name="" id="" placeholder="Search emojis" v-model="search_txt">
       </div>
       <button class="skin_tone_btn">
-        <div class="skin_tone_icon">🤚</div>
-        Skin Tone
+        <div :class="[!skin_tone_btn_txt_visible ? skin_tone_icon : '', 'skin_tone_icon skin_tone_icon_wide']">🤚</div>
+        <div v-if="skin_tone_btn_txt_visible" class="skin_tone_btn_txt">Skin Tone</div>
       </button>
     </section>
     <section class="emojis_groups_wrapper">
@@ -46,10 +46,17 @@ export default {
   data() {
     return {
       emojiSet: emojiSet,
-      // emojis: {
-      //   'Frequently Used': ['🍌', '🔥', '✅', '🤣', '⭐️', '🤚', '🚫', '💀'],
-      //   'Smileys & People': ['😀', '😃', '😄', '😁']
-      // }
+      skin_tone_btn_txt_visible: true,
+      search_txt: null,
+    }
+  },
+  watch: {
+    search_txt: function(val) {
+      if (val !== "") {
+        this.skin_tone_btn_txt_visible = false;
+      } else {
+        this.skin_tone_btn_txt_visible = true;
+      }
     }
   },
   computed: {

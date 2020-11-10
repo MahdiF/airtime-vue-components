@@ -198,6 +198,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all ease-in-out 0.9s;
 }
 .skin_tone_btn:hover {
     background: rgba(255, 255, 255, 0.24);
@@ -216,10 +217,18 @@ a:hover {
 .skin_tone_btn .skin_tone_icon {
     width: calc(16em / 15);
     height: calc(16em / 15);
-    margin-right: calc(8em / 15);
     border-radius: 50%;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.skin_tone_icon_wide {
+    width: calc(32em / 15);
+}
+
+.skin_tone_btn_txt {
+    margin-left: calc(8em / 15);
 }
 
 
@@ -248,6 +257,7 @@ a:hover {
     position: sticky;
     top: 0;
     left: 0;
+    transition: all ease-in-out 0.15s;
 }
 
 .emojis_list {
@@ -256,6 +266,14 @@ a:hover {
     gap: calc(8em / 16);
     list-style: none;
     padding-top: calc(8em / 16);
+}
+
+.emoji_btn {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
 }
 
 .emoji_btn a {
