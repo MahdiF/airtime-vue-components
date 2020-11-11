@@ -301,3 +301,28 @@ a:hover {
     outline: none;
     box-shadow: 0 0 0 1px rgba(153,37,255, 1), 0 0 0 3px rgba(153, 37, 255, 0.2);
 }
+
+
+/* ---------- Reactions ---------- */
+.reactions_wrapper {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+}
+.reaction_btn {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    transition: all ease-in-out 0.15s;
+}
+.reaction_btn img {
+    max-width: 100%;
+}
+.reaction_btn:hover {
+    transform: scale(1.25);
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+}
+.reaction_btn:active {
+    transform: scale(0.9);
+}
