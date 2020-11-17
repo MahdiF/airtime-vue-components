@@ -101,8 +101,6 @@ export default {
       let randomTopPosition = this.getRandomNumber(0, reactionsSafeAreaHeight-stickerHeight);
       let randomLeftPosition = this.getRandomNumber(0, reactionsSafeAreaWidth-stickerWidth);
 
-      console.log(reactionsSafeAreaHeight);
-
       this.stickerStyle = {
         transform: `rotate(${randomAngle}deg)`,
         top: randomTopPosition / reactionsSafeAreaHeight * 100 + "%",
@@ -135,18 +133,5 @@ export default {
 </script>
 
 <style>
-/* TODO's */
-/* 
-[ ] Show emoji in a random position in % instead of PX
-[ ] Add stickers animation
-[ ] Swap emojis with real reactions & stickers
-[ ] Remove emoji after it's done animating.
-[ ] Use Vue animation
 
-----------
-[ ] Stickers should appear with a tilt + Add this to specs.
-[ ] Update specs to keep old navigation designed by Gui.
-[ ] Reach out to Omar to learn more about the animation curve.
-[ ] Reach out to Vince to learn more about the rules we have for showing stickers on the screen.
-*/
 </style>
