@@ -97,7 +97,7 @@ export default {
       let reactionsSafeArea = this.$refs['reactionsSafeArea'];
       let reactionsSafeAreaWidth = reactionsSafeArea.offsetWidth;
       let reactionsSafeAreaHeight = reactionsSafeArea.offsetHeight;
-      let randomAngle = this.getRandomNumber(0, 180);
+      let randomAngle = this.getRandomNumber(-20, 20);
       let randomTopPosition = this.getRandomNumber(0, reactionsSafeAreaHeight-stickerHeight);
       let randomLeftPosition = this.getRandomNumber(0, reactionsSafeAreaWidth-stickerWidth);
 
