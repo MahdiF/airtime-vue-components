@@ -105,6 +105,9 @@ a:hover {
 .main_wrapper h2 {
     margin-bottom: calc(24em / 24);
 }
+.main_wrapper hr {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 .emoji_picker_wrapper {
     background: #2A2131;
@@ -303,11 +306,12 @@ a:hover {
 }
 
 
-/* ---------- Reactions ---------- */
-.reactions_wrapper {
+/* ---------- Reaction Buttons ---------- */
+.reaction_btns_wrapper {
     display: grid;
     gap: 24px;
     grid-template-columns: repeat(4, 1fr);
+    padding: 40px 0;
 }
 .reaction_btn {
     width: 64px;
@@ -325,4 +329,87 @@ a:hover {
 }
 .reaction_btn:active {
     transform: scale(0.9);
+}
+
+/* ---------- Reactions ---------- */
+
+.reactions_wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.reactions_safe_area {
+    background: rgba(255,255,255,0.1);
+    width: 100%;
+    height: 500px;
+    padding: 24px;
+    position: relative;
+    border-radius: 8px;
+}
+
+.reaction_object {
+    opacity: 0;
+    padding: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: rgba(255,255,255,0.1); */
+    letter-spacing: 4px;
+    position: absolute;
+    transform-origin: center;
+    top: 400px;
+    left: 400px;
+}
+
+.reaction_object img {
+    max-width: 100%;
+}
+
+
+.floatUp-enter-active, .floatUp-leave-active {
+    animation: floatUp 1.75s cubic-bezier(0.24, 0.97, 0.83, 0.4) forwards;
+}
+
+
+
+.sticker {
+    width: 120px;
+    position: absolute;
+    top: 250px;
+    left: 600px;
+    /* opacity: 0; */
+}
+.sticker img {
+    max-width: 100%;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 0;
+    }
+}
+
+
+.fade-enter-active {
+    transition: opacity 0.1s ease;
+}
+
+.fade-enter {
+    opacity: 0;
 }
