@@ -113,7 +113,7 @@ export default {
       let that=this;
       setTimeout(()=>{
         that.stickerShown=false;
-      }, 1700)
+      }, 1400);
     },
     deleteReaction(index) {
       this.$delete(this.reactions, index);
