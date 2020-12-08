@@ -26,3 +26,6 @@ export default {
   }
 }
 </script>
+<style scoped>
+  @import './../assets/css/Home.css';
+</style>
