@@ -104,14 +104,11 @@ input {
     padding: 8px 16px;
     border-radius: 12px;
     margin-bottom: 8px;
-    animation: scaleUp 0.2s ease-in-out forwards;
-    transform-origin: bottom left;
     background-color: rgba(255, 255, 255, 0.08);
   }
   .msg_bubble_purple {
     background-color: #9925ff;
     align-self: flex-end;
-    transform-origin: bottom right;
   }
   .msg_bubble:last-child {
     margin-bottom: 0;
@@ -149,22 +146,24 @@ input {
     0% {
       opacity: 0;
       transform: scale(0);
+      transform-origin: bottom left;
     }
     100% {
       opacity: 1;
       transform: scale(1);
+      transform-origin: bottom left;
     }
   }
   @keyframes scaleUpRight {
     0% {
       opacity: 0;
-      transform-origin: bottom right;
       transform: scale(0);
+      transform-origin: bottom right;
     }
     100% {
       opacity: 1;
-      transform-origin: bottom right;
       transform: scale(1);
+      transform-origin: bottom right;
     }
   }
 
