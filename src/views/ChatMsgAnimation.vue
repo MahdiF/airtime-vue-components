@@ -25,7 +25,10 @@
         <input type="number" value="0.3" v-model="animationDuration">
       </div>
       <hr>
+      <button @click="randomMessageTimer">Send auto messages</button>
+      <hr>
     </div>
+    
     <button class="settings_btn" @click="settingsShown = !settingsShown">Toggle Settings</button>
   </div>
   <div class="chat_wrapper" ref="chatWrapper">
@@ -58,6 +61,7 @@ export default {
   },
   data() {
     return {
+      randomMessagesCounter: 0,
       settingsShown: true,
       animationType: "0",
       animationStyle: [
@@ -94,7 +98,7 @@ export default {
           this.chatMessages.push(message);
           this.msgReceived = "";
           let that = this;
-          setTimeout(that.scrollToLates, 100);
+          setTimeout(that.scrollToLates, 10);
         }
       } else {
         if (this.msgSent !== "") {
@@ -102,7 +106,7 @@ export default {
           this.chatMessages.push(message);
           this.msgSent = "";
           let that = this;
-          setTimeout(that.scrollToLates, 100);
+          setTimeout(that.scrollToLates, 10);
         }
       }
     },
@@ -118,7 +122,18 @@ export default {
       
       this.activeStyleRight = this.animationStyle[this.animationType].right;
       this.activeStyleRight.animationDuration = animationDuration;
-    }
+    },
+    addNewRandomMessage() {
+      this.randomMessagesCounter++;
+      let message = `Message ${this.randomMessagesCounter}`;
+      
+      this.msgReceived = message;
+      this.sendMsg(true);
+    },
+    randomMessageTimer() {
+      let that = this;
+      setInterval(that.addNewRandomMessage, 400);
+    },
   },
   created: function() {
     this.updateStyles();
@@ -129,6 +144,9 @@ export default {
     },
     animationDuration: function() {
       this.updateStyles();
+    },
+    chatMessages: function() {
+      this.scrollToLates();
     }
   }
 }
