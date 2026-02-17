@@ -24,19 +24,14 @@
       </div>
     </section>
     <section ref="reactionsSafeArea" class="reactions_safe_area">
-      <transition
-        v-for="(reaction, index) in reactions"
-        :key="index"
-        name="floatUp"
-        :after-leave="deleteReaction(index)"
+      <div
+        v-for="reaction in reactions"
+        :key="reaction.id"
+        class="reaction_object floatUp-enter-active"
+        :style="reaction.position"
       >
-        <div
-          class="reaction_object"
-          :style="reaction.position"
-          >
-            <img src="@/assets/images/reactions/reaction-laugh.png" alt="" srcset="">
-        </div>
-      </transition>
+        <img src="@/assets/images/reactions/reaction-laugh.png" alt="" srcset="">
+      </div>
       <!-- <div class="reaction_object floatUp-enter-active">😃</div> -->
       <!-- <div class="reaction_object floatUp-enter-active"><img src="@/assets/images/reactions/reaction-laugh.png" alt="" srcset=""></div> -->
       
@@ -113,15 +108,17 @@ export default {
         that.stickerShown=false;
       }, 1600);
     },
-    deleteReaction(index) {
-      this.$delete(this.reactions, index);
-    },
     addReaction() {
-
+      const id = Date.now() + Math.random();
       this.reactions.push({
+        id,
         position: this.generateRandomPosition(48,48),
       });
 
+      setTimeout(() => {
+        const idx = this.reactions.findIndex(r => r.id === id);
+        if (idx !== -1) this.reactions.splice(idx, 1);
+      }, 1750);
     },
   },
   watch: {
